@@ -1,7 +1,7 @@
 package com.launchcode.coffeeapp.controllers;
 
-import org.launchcode.hellospring.models.Type;
-import org.launchcode.hellospring.models.data.TypeRepository;
+import com.launchcode.coffeeapp.models.Type;
+import com.launchcode.coffeeapp.models.data.TypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

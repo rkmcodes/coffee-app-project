@@ -1,6 +1,6 @@
 package com.launchcode.coffeeapp.models.data;
 
-import org.launchcode.hellospring.models.Type;
+import com.launchcode.coffeeapp.models.Type;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

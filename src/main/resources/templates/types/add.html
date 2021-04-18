@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container  body-content">
+<h1>Add Skill</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<form method="post" style="max-width:600px;">
+    <div class="form-group">
+        <label th:for="name">Coffee Type Name</label>
+        <input class="form-control" th:field="${type.name}" />
+        <span th:errors="${type.name}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="description">Type Description</label>
+        <input class="form-control" th:field="${type.description}" />
+        <span th:errors="${type.description}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Add Type" />
+</form>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <table class="review-listing">
+        <tr th:each="review : ${reviews}">
+            <td>
+                <p>
+                    Job Id:
+                    <a th:href="@{'/view/' + ${review.id}}" th:text="${review.id}"></a>
+                </p>
+                <p th:text="${'Name: ' + review.name}"></p>
+                <!-- right above here i changed the name to summary -->
+                <p>
+                    Employer:
+                    <a th:href="@{'/places/view/' + ${review.place.id}}" th:text="${review.place.name}"></a>
+                </p>
+                <p>
+                    Skills:
+                <ul th:each="type : ${review.types}">
+                    <li>
+                        <a th:href="@{'/types/view/' + ${type.id}}" th:text="${type.name}"></a>
+                    </li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

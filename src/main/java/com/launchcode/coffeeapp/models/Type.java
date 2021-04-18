@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 public class Type extends AbstractEntity  {
 
-    @ManyToMany(mappedBy = "places")
+    @ManyToMany(mappedBy = "types")
     @NotNull
     private List<Review> reviews = new ArrayList<>();
 
@@ -27,11 +27,11 @@ public class Type extends AbstractEntity  {
         this.description = description;
     }
 
-    public Place(String n) {
+    public Type(String n) {
         this.description = n;
     }
 
-    public Place() {}
+    public Type() {}
 
 
 

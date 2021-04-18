@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <form th:action="@{/search/results}" method = "post">
+        <h2>Search by:</h2>
+
+        <p>
+            <span th:each="column : ${columns}">
+                <input
+                        type="radio"
+                        name="searchType"
+                        th:id="${column.key}"
+                        th:value="${column.key}"
+                        th:checked="${column.key == 'all'}"/>
+                <label th:for="${column.key}" th:text="${column.value}"></label>
+            </span>
+
+        </p>
+
+        <p>
+            <label for="searchTerm">Keyword:</label>
+            <input type="text" name="searchTerm" id="searchTerm" />
+        </p>
+
+        <input type="submit" value="Search" />
+    </form>
+
+    <hr />
+
+
+    <table class="review-listing">
+        <tr th:each="review : ${reviews}">
+            <td>
+                <p>
+                    Review Id:
+                    <a th:href="@{'/view/' + ${review.id}}" th:text="${review.id}"></a>
+                </p>
+                <p th:text="${'Name: ' + review.name}"></p>
+                <!-- changed name to summary right above here -->
+                <p>
+                    Place:
+                    <a th:href="@{'/places/view/' + ${review.place.id}}" th:text="${review.place.name}"></a>
+                </p>
+                <p>
+                    Types:
+                <ul th:each="type : $review.types}">
+                    <li>
+                        <a th:href="@{'/types/view/' + ${type.id}}" th:text="${type.name}"></a>
+                    </li>
+                </ul>
+                </p>
+
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

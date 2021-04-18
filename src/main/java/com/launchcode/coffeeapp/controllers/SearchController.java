@@ -1,15 +1,15 @@
 package com.launchcode.coffeeapp.controllers;
 
-import org.launchcode.hellospring.models.Review;
-import org.launchcode.hellospring.models.ReviewData;
-import org.launchcode.hellospring.models.data.ReviewRepository;
+import com.launchcode.coffeeapp.models.Review;
+import com.launchcode.coffeeapp.models.ReviewData;
+import com.launchcode.coffeeapp.models.data.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
-import static org.launchcode.hellospring.controllers.ListController.columnChoices;
+import static com.launchcode.coffeeapp.controllers.ListController.columnChoices;
 
 @Controller
 @RequestMapping("search")

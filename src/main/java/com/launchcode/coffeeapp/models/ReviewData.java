@@ -31,8 +31,8 @@ public class ReviewData {
 
     public static String getFieldValue(Review review, String fieldName){
         String theValue;
-        if (fieldName.equals("summary")){
-            theValue = review.getSummary();
+        if (fieldName.equals("name")){
+            theValue = review.getName();
         } else if (fieldName.equals("place")){
             theValue = review.getPlace().toString();
         } else {
@@ -50,7 +50,7 @@ public class ReviewData {
 
         for (Review review : allReviews) {
 
-            if (review.getSummary().toLowerCase().contains(lower_val)) {
+            if (review.getName().toLowerCase().contains(lower_val)) {
                 results.add(review);
             } else if (review.getPlace().toString().toLowerCase().contains(lower_val)) {
                 results.add(review);

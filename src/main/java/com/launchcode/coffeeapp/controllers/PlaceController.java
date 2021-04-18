@@ -4,8 +4,8 @@ import com.launchcode.coffeeapp.models.Place;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.launchcode.hellospring.models.Place;
-import org.launchcode.hellospring.models.data.PlaceRepository;
+import com.launchcode.coffeeapp.models.Place;
+import com.launchcode.coffeeapp.models.data.PlaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -19,7 +19,7 @@ import java.util.Optional;
 public class PlaceController {
 
     @Autowired
-    private PlacRepository placeRepository;
+    private PlaceRepository placeRepository;
 
 
     @GetMapping("add")

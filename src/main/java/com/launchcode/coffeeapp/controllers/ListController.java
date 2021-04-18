@@ -1,19 +1,16 @@
-//I AM CHANGING HELLOSPRING TO COFFEEAPP EVERYWHERE
-
 package com.launchcode.coffeeapp.controllers;
 
 import com.launchcode.coffeeapp.models.data.ReviewRepository;
-import org.launchcode.hellospring.models.Review;
-import org.launchcode.hellospring.models.data.PlaceRepository;
-import org.launchcode.hellospring.models.data.ReviewRepository;
-import org.launchcode.hellospring.models.data.TypeRepository;
+import com.launchcode.coffeeapp.models.Review;
+import com.launchcode.coffeeapp.models.data.PlaceRepository;
+import com.launchcode.coffeeapp.models.data.TypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import org.launchcode.hellospring.models.ReviewData;
+import com.launchcode.coffeeapp.models.ReviewData;
 
 import java.util.HashMap;
 

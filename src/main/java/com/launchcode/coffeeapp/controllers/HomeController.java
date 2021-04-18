@@ -1,17 +1,13 @@
 package com.launchcode.coffeeapp.controllers;
 
 import com.launchcode.coffeeapp.models.Place;
+import com.launchcode.coffeeapp.models.Review;
 import com.launchcode.coffeeapp.models.Type;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.launchcode.coffeeapp.models.Place;
-import org.launchcode.coffeeapp.models.Review;
-import org.launchcode.coffeeapp.models.Type;
-import org.launchcode.coffeeapp.models.data.PlaceRepository;
-import org.launchcode.coffeeapp.models.data.ReviewRepository;
-import org.launchcode.coffeeapp.models.data.TypeRepository;
+import com.launchcode.coffeeapp.models.data.PlaceRepository;
+import com.launchcode.coffeeapp.models.data.ReviewRepository;
+import com.launchcode.coffeeapp.models.data.TypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
@@ -62,7 +58,7 @@ public class HomeController {
         Place place = placeRepository.findById(placeId).get();
         newReview.setPlace(place);
 
-        List<Type> typeObjs = (List<Type>) typeRepository.findAllById(places);
+        List<Type> typeObjs = (List<Type>) typeRepository.findAllById(types);
         newReview.setTypes(typeObjs);
 
         reviewRepository.save(newReview);

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+    <h2>Coffee App</h2>
+    <ul>
+        <li th:each="review : ${reviews}">
+            <a th:href="@{'/view/' + ${review.id}}" th:text="${review.name}"></a>
+            <!-- changed name to summary above this line -->
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>

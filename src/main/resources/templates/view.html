@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container  body-content">
+<h1 th:text="${'Review: ' + review.name}">Default Title</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<div class="review-listing">
+    <p th:text="${'ID: ' + review.id}"></p>
+    <p th:text="${'Name: ' + review.name}"></p>
+    <p>
+        Place: <a th:href="@{'/places/view/' + ${review.place.id}}" th:text="${review.place.name}"></a>
+    </p>
+    <p> Types:
+    <ul>
+        <li th:each="type : ${review.types}">
+            <a th:href="@{'/types/view/' + ${type.id}}" th:text="${type.name}"></a>
+        </li>
+    </ul>
+    </p>
+</div>
+
+
+</body>
+</html>
+©

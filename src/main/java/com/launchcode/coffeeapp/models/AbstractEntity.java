@@ -16,25 +16,25 @@ public abstract class AbstractEntity {
     private int id;
 
     @NotNull
-    @NotBlank(message = "Summary is Required")
-    @Size(min = 1, max = 1000, message ="Summary must be between 1 & 1000 characters")
-    private String summary;
+    @NotBlank(message = "Name is Required")
+    @Size(min = 1, max = 1000, message ="Name must be between 1 & 1000 characters")
+    private String name;
 
     public int getId() {
         return id;
     }
 
     public String getName() {
-        return summary;
+        return name;
     }
 
     public void setName(String name) {
-        this.summary = summary;
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return summary;
+        return name;
     }
 
     @Override

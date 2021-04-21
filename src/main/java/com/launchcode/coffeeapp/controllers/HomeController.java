@@ -42,6 +42,7 @@ public class HomeController {
         model.addAttribute("places", placeRepository.findAll());
         model.addAttribute("title", "Add Review");
         model.addAttribute("types", typeRepository.findAll());
+        // don't need these model statements
         model.addAttribute(new Review());
         return "add";
     }

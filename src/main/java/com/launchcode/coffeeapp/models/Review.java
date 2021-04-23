@@ -14,13 +14,18 @@ public class Review extends AbstractEntity {
     @NotNull
     private List<Type> types;
 
+    @ManyToMany
+    @NotNull
+    private List<Flavor> flavors;
+
     public Review() {
     }
 
-    public Review(Place aPlace, List<Type> someTypes) {
+    public Review(Place aPlace, List<Type> someTypes, List<Flavor> someFlavors) {
         super();
         this.place = aPlace;
         this.types = someTypes;
+        this.flavors = someFlavors;
     }
 
     // Getters and setters.
@@ -38,6 +43,12 @@ public class Review extends AbstractEntity {
     }
 
     public void setTypes(List<Type> types) { this.types = types; }
+
+    public List<Flavor> getFlavors() {
+        return flavors;
+    }
+
+    public void setFlavors(List<Flavor> flavors) { this.flavors = flavors; }
 
 
 

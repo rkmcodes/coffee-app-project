@@ -20,6 +20,13 @@
         </li>
     </ul>
     </p>
+    <p> Flavors:
+    <ul>
+        <li th:each="flavor : ${review.flavors}">
+            <a th:href="@{'/flavors/view/' + ${flavor.id}}" th:text="${flavor.name}"></a>
+        </li>
+    </ul>
+    </p>
 </div>
 
 

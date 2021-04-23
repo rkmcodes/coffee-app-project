@@ -36,6 +36,15 @@
         <a th:href="@{'/types/add'}">Add Type</a>
     </div>
 
+    <div class="form-group">
+        <label th:for="flavors">Flavors</label>
+        <th:block th:each="flavor : ${flavors}">
+            <input type="checkbox" name="flavors" th:value="${flavor.id}">
+            <label th:text="${flavor.name}"></label>
+        </th:block>
+        <a th:href="@{'/flavors/add'}">Add Flavor</a>
+    </div>
+
     <input type="submit" value="Add Review" />
 </form>
 

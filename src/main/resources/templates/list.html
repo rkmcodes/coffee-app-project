@@ -16,6 +16,7 @@
         <th>All</th>
         <th>Place</th>
         <th>Type</th>
+        <th>Flavor</th>
     </tr>
 
     <tr>
@@ -32,6 +33,11 @@
         <td>
             <li th:each="type : ${types}">
                 <a th:href="@{/list/reviews(column=type,value=${type.name})}" th:text="${type.name}"></a>
+            </li>
+        </td>
+        <td>
+            <li th:each="flavor : ${flavors}">
+                <a th:href="@{/list/reviews(column=flavor,value=${flavor.name})}" th:text="${flavor.name}"></a>
             </li>
         </td>
     </tr>

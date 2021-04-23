@@ -52,9 +52,17 @@
                 </p>
                 <p>
                     Types:
-                <ul th:each="type : $review.types}">
+                <ul th:each="type : ${review.types}">
                     <li>
                         <a th:href="@{'/types/view/' + ${type.id}}" th:text="${type.name}"></a>
+                    </li>
+                </ul>
+                </p>
+                <p>
+                    Flavors:
+                <ul th:each="type : ${review.flavors}">
+                    <li>
+                        <a th:href="@{'/flavors/view/' + ${flavor.id}}" th:text="${flavor.name}"></a>
                     </li>
                 </ul>
                 </p>

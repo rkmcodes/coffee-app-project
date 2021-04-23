@@ -2,7 +2,6 @@ package com.launchcode.coffeeapp.models;
 
 import java.util.ArrayList;
 
-
 public class ReviewData {
 
     public static ArrayList<Review> findByColumnAndValue(String column, String value, Iterable<Review> allReviews) {
@@ -35,8 +34,10 @@ public class ReviewData {
             theValue = review.getName();
         } else if (fieldName.equals("place")){
             theValue = review.getPlace().toString();
-        } else {
+        } else if (fieldName.equals("type")){
             theValue = review.getTypes().toString();
+        } else {
+            theValue = review.getFlavors().toString();
         }
 
         return theValue;
@@ -56,6 +57,8 @@ public class ReviewData {
                 results.add(review);
             } else if (review.getTypes().toString().toLowerCase().contains(lower_val)) {
                 results.add(review);
+            } else if (review.getFlavors().toString().toLowerCase().contains(lower_val)) {
+                    results.add(review);
             } else if (review.toString().toLowerCase().contains(lower_val)) {
                 results.add(review);
             }

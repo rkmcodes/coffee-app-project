@@ -14,20 +14,28 @@
         <tr th:each="review : ${reviews}">
             <td>
                 <p>
-                    Job Id:
+                    Review Id:
                     <a th:href="@{'/view/' + ${review.id}}" th:text="${review.id}"></a>
                 </p>
                 <p th:text="${'Name: ' + review.name}"></p>
                 <!-- right above here i changed the name to summary -->
                 <p>
-                    Employer:
+                    Place:
                     <a th:href="@{'/places/view/' + ${review.place.id}}" th:text="${review.place.name}"></a>
                 </p>
                 <p>
-                    Skills:
+                    Types:
                 <ul th:each="type : ${review.types}">
                     <li>
                         <a th:href="@{'/types/view/' + ${type.id}}" th:text="${type.name}"></a>
+                    </li>
+                </ul>
+                </p>
+                <p>
+                    Flavors:
+                <ul th:each="flavor : ${review.flavors}">
+                    <li>
+                        <a th:href="@{'/flavors/view/' + ${flavor.id}}" th:text="${flavor.name}"></a>
                     </li>
                 </ul>
                 </p>

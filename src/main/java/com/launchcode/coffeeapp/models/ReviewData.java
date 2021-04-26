@@ -58,7 +58,7 @@ public class ReviewData {
             } else if (review.getTypes().toString().toLowerCase().contains(lower_val)) {
                 results.add(review);
             } else if (review.getFlavors().toString().toLowerCase().contains(lower_val)) {
-                    results.add(review);
+                results.add(review);
             } else if (review.toString().toLowerCase().contains(lower_val)) {
                 results.add(review);
             }
